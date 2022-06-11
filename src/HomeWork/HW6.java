@@ -1,34 +1,27 @@
 package HomeWork;
 
 public class HW6 {
-	
-	void prime(int num) {
-		
-		boolean f = true;
-		if(num==0 || num==1) {
-			System.out.println(num + " is not prime number");
-		} else if(num==2) {
-			System.out.println(num + " is a prime number");
-		} else {
-			for(int ab = 2; ab<=num/2; ab++) {
-				if(num%ab==0) {
-					f = false;
-					System.out.println(num + " is not a prime number");
-					break;
-				} 
-			}
-		}
-		if(f == true) {
-			System.out.println(num + " is prime number");
-		}
-	
+	boolean isPrime(int x){
+	    boolean isPrime=true;
+	    if(x>1) {
+
+	        for(int i=2;i<x;i++) {
+	            if(x%i==0) {  // if the number that user has provided if that number is completely divisable by any other number
+	                isPrime=false;
+	                break;
+	            }
+	        }
+	    }else {
+	        isPrime=false;
+	    }
+	    return isPrime;
 	}
 	public static void main(String[] args) {
 		
 		// Write a method to return whether given number is prime or not? 
 		
 		HW6 a = new HW6();
-		a.prime(11);
+		System.out.println(a.isPrime(11));
 	}
 
 }
